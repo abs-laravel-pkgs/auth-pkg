@@ -5,6 +5,28 @@
 @endif
 
 <script type="text/javascript">
-    var login_page_template_url ="{{asset($auth_pkg_prefix.'/public/themes/'.$theme.'/pages/auth/login.html')}}";
+	app.config(['$routeProvider', function($routeProvider) {
+
+	    $routeProvider.
+	    when('/', {
+	        template: '<login></login>',
+	        title: 'Login',
+	    }).
+	    when('/login', {
+	        template: '<login></login>',
+	        title: 'Login',
+	    }).
+	    when('/forgot-password', {
+	        template: '<forgot-password></forgot-password>',
+	        title: 'Forgot Password',
+	    }).
+	    when('/reset-password', {
+	        template: '<reset-password></reset-password>',
+	        title: 'Reset Password',
+	    });
+
+	}]);
+
+    var login_page_template_url ="{{asset($auth_pkg_prefix.'/public/themes/'.$theme.'/auth/login.html')}}";
 </script>
-<script type="text/javascript" src="{{asset($auth_pkg_prefix.'/public/themes/'.$theme.'/pages/auth/controller.js')}}"></script>
+<script type="text/javascript" src="{{asset($auth_pkg_prefix.'/public/themes/'.$theme.'/auth/controller.js')}}"></script>

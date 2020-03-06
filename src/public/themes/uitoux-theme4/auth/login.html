@@ -1,0 +1,63 @@
+<div class="login-wrap">
+    <!-- Page Main Content -->
+    <div class="page-main-content">
+        <div class="container">
+            <div class="row flex-row">
+                <div class="col-md-6 bg-login">
+                    <div class="center-align">
+                        <h2 class="login-title">HelpDesk </h2>
+                        <p class="login-description">Powered by</p>
+                        <h4 class="login-subtitle">UITOUX Solutions<h4>
+                    </div>
+                </div><!-- Column -->
+                <div class="col-md-6">
+                    <div class="login-content">
+                        <div class="img-center">
+                            <img ng-src="{{theme+'/img/bg/logo.png'}}" class="img-responsive">
+                        </div><!-- Img Center -->
+                        <div class="login-box">
+                            <form method="POST" id="login-form">
+                                {{ csrf_field() }}
+                                <h4 class="form-title">Login</h4>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="username" placeholder="Username or E-mail">
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <input type="password" class="form-control right-rds" placeholder="Password" name="password">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-eye" type="button">
+                                                <img src="public/img/bg/eye-icon.svg" class="img-responsive">
+                                            </button>
+                                        </span>
+                                    </div><!-- /input-group -->
+                                </div>
+                                <ul class="login-action">
+                                    <li class="checkbox-wrap">
+                                        <div class="common-checkbox">
+                                            <input id="use_ad_password" type="checkbox" name="use_ad_password" value="true">
+                                            <label for="use_ad_password">Login with AD Password</label>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <button type="submit" class="btn btn-login">
+                                    <img src="public/img/bg/arrow.svg" class="img-responsive">
+                                </button>
+                                <div class="text-center">
+                                    <a href="{{route('password.request')}}" class="btn btn-link">Forgot Password?</a>
+                                </div>
+                        </div><!-- Login Inbox -->
+                        </form>
+                    </div><!-- Login Content -->
+                </div><!-- Column -->
+                <div class="col-md-6 bg-login bottom-column">
+                    <div class="center-align">
+                        <h2 class="login-title">HelpDesk </h2>
+                        <p class="login-description">Powered by</p>
+                        <h4 class="login-subtitle">UITOUX Solutions<h4>
+                    </div>
+                </div><!-- Column -->
+            </div><!-- Row -->
+        </div><!-- Container -->
+    </div><!-- Page Main Content -->
+</div><!-- Content Wrap -->
