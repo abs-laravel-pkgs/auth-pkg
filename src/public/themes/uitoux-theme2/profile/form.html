@@ -1,0 +1,175 @@
+<!-- Content Wrap -->
+<div class="content-wrap cndn-wrap">
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="page-header-inner">
+            <div class="page-header-content-left">
+                <div class="page-header-content title-block">
+                    <h1 class="title"><b>Profile</b></h1>
+                </div><!-- Page Header Content -->
+            </div><!-- Page Header Content Left -->
+        </div><!-- Page Header Inner -->
+    </div><!-- Page Header -->
+    <!-- Page Main Content -->
+    <div class="page-main-content form-content type2">
+        <form id="form" autocomplete="off" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{{$ctrl.profile.id}}">
+            <input type="hidden" name="entity_id" value="{{$ctrl.profile.entity_id}}">
+            <div class="page-tab-form pb-70">
+                <div class="tab-form-wrap">
+                    <div class="tab-form-header">
+                        <div class="tab-header">
+                            <!-- Filters -->
+                            <div class="isotope-filters animated" data-animation="fadeInLeft" data-animation-delay="300">
+                                <ul class="nav nav-pills cndn-tabs">
+                                    <li class="active">
+                                        <a class="filter active" data-target="#general-information" data-toggle="tab" aria-expanded="true">
+                                            General Info
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div><!-- Filters -->
+                        </div><!-- Tab Header -->
+                    </div><!-- Tab Form Header -->
+                    <div class="tab-form-body">
+                        <div class="tab-content">
+                            <!-- TAB PANEL -->
+                            <div class="tab-pane fade in active" id="general-information" data-animation="fadeInUp" data-animation-delay="300">
+                                <div class="tab-pane-wrap">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    Employee Code
+                                                    <sup class="mandatory">*</sup>
+                                                </label>
+                                                <input type="text" class="form-control" ng-model="$ctrl.profile.employee.code" name="employee[code]" placeholder="Enter Employee Code" readonly />
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    First Name
+                                                    <sup class="mandatory">*</sup>
+                                                </label>
+                                                <input type="text" class="form-control" ng-model="$ctrl.profile.first_name" name="first_name" placeholder="Enter First Name" readonly />
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    Last Name
+                                                </label>
+                                                <input type="text" class="form-control" ng-model="$ctrl.profile.last_name" name="last_name" placeholder="Enter Last Name" readonly/>
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                    </div>
+                                    <!--row-->
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    Official Email
+                                                </label>
+                                                <input type="email" class="form-control" ng-model="$ctrl.profile.email" name="email" placeholder="Enter Official Email ID" readonly/>
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    Mobile Number
+                                                </label>
+                                                <input type="text" class="form-control" ng-model="$ctrl.profile.mobile_number" name="mobile_number" placeholder="Enter Mobile Number" />
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    Personal Email
+                                                </label>
+                                                <input type="email" class="form-control" ng-model="$ctrl.profile.employee.personal_email" name="employee[personal_email]" placeholder="Enter Personal Email" />
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    Alternate Mobile Number
+                                                </label>
+                                                <input type="text" class="form-control" ng-model="$ctrl.profile.employee.alternate_mobile_number" name="employee[alternate_mobile_number]" placeholder="Enter Alternate Mobile Number" />
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                    </div>
+                                    <!--row-->
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    GitHub Username
+                                                </label>
+                                                <input type="text" class="form-control" ng-model="$ctrl.profile.employee.github_username" name="employee[github_username]" />
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                        <div class="col-md-3">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    Username
+                                                    <sup class="mandatory">*</sup>
+                                                </label>
+                                                <input type="text" class="form-control" ng-model="$ctrl.profile.username" name="username" readonly />
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Change Password <sup class="mandatory">*</sup></label>
+                                                <div class="tab-switch">
+                                                    <md-switch ng-model="$ctrl.switch_password" aria-label="Switch 2" ng-change="psw_change($ctrl.switch_password)" ng-true-value="'No'" ng-false-value="'Yes'" class="md-warn type-2">
+                                                        {{ $ctrl.switch_password }}
+                                                    </md-switch>
+                                                    <input type="hidden" id="password_change" name="password_change" value="{{$ctrl.switch_password}}" class="required">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3" id="hide_password">
+                                            <div class="input-text form-group">
+                                                <label>
+                                                    Password
+                                                    <sup class="mandatory">*</sup>
+                                                </label>
+                                                <input type="password" class="form-control" ng-model="$ctrl.profile.password" name="password" id="password" />
+                                            </div><!-- Feild -->
+                                        </div><!-- Column -->
+                                        <div class="col-md-3">
+                                            <div class="profile-upload">
+                                                <!-- <img class="img-responsive" src="{{ URL::asset('public/theme/img/content/profile.jpg') }}" alt="Profile Upload" /> -->
+                                                <div class="avatar-upload">
+                                                    <div class="avatar-edit">
+                                                        <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="attachment" />
+                                                        <label for="imageUpload"><i class="ion-md-create"></i></label>
+                                                    </div>
+                                                    <div class="avatar-preview">
+                                                        <div class="avatar-img" id="imagePreview" style="background-image: url(' {{$ctrl.user_attchment_url}}/{{$ctrl.profile.profile_image.name}}');">
+                                                        </div>
+                                                    </div>
+                                                </div><!-- Avatar Upload -->
+                                                <p class="img-caption">UPLOAD PICTURE</p>
+                                            </div><!-- Profile Upload -->
+                                        </div><!-- Column -->
+                                        <div class="tab-pane-footer">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <button type="submit" id="submit" class="btn btn-primary my-tooltip" ng-shortcut="'meta+shift+s'" ng-shortcut-click data-title="ctrl+shift+s">
+                                                        Submit
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div><!-- Tab Footer -->
+                                    </div><!-- Row -->
+                                </div><!-- Tab Pane Wrap -->
+                            </div><!-- Tabe Pane -->
+                        </div><!-- Tab Content -->
+                    </div><!-- Tab Form Body -->
+                </div><!-- Tab Form Wrap -->
+            </div><!-- Page Form -->
+        </form>
+    </div><!-- Page Main Content -->
+</div><!-- Content Wrap -->
